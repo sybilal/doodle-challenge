@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  padding-inline: 24px;
+}
+
+.container:first-child {
+  padding-top: 16px;
+}
+
+.container:last-child {
+  padding-bottom: 16px;
+}
+
+.is_you {
+  flex-direction: row-reverse;
+}
+
+.is_you>.message_box {
+  background-color: #fcf6c5;
+}
+
+.message_box {
+  background-color: #fff;
+  border: 2px solid #d4dade;
+  border-radius: 4px;
+  padding: 16px;
+}

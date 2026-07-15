@@ -1,0 +1,26 @@
+.container {
+  background-color: #3798d4;
+  display: flex;
+  align-self: stretch;
+  gap: 8px;
+  padding: 8px;
+}
+
+.container>input {
+  flex: 1;
+  border: 2px solid #2e77a4;
+  border-radius: 4px;
+  padding: 8px;
+}
+
+
+
+button {
+  all: unset;
+  background-color: #ff876d;
+  color: #FFF;
+  padding: 8px 16px;
+  border-radius: 4px;
+
+  cursor: pointer;
+}
