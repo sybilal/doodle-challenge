@@ -1,6 +1,8 @@
 .container {
   display: flex;
   padding-inline: 24px;
+  width: 100%;
+  max-width: 640px;
 }
 
 .container:first-child {
@@ -15,13 +17,28 @@
   flex-direction: row-reverse;
 }
 
-.is_you>.message_box {
-  background-color: #fcf6c5;
-}
+
 
 .message_box {
   background-color: #fff;
   border: 2px solid #d4dade;
   border-radius: 4px;
   padding: 16px;
+  max-width: 65%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.is_you>.message_box {
+  background-color: #fcf6c5;
+  align-items: flex-end;
+}
+
+.grey_text {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  opacity: 0.25;
+  color: #000;
 }

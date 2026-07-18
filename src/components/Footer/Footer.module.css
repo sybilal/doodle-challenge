@@ -1,19 +1,27 @@
 .container {
   background-color: #3798d4;
   display: flex;
+  justify-content: center;
   align-self: stretch;
   gap: 8px;
   padding: 8px;
 }
 
-.container>input {
+
+
+.compose_area {
+  max-width: 640px;
+  display: flex;
+  width: 100%;
+  gap: 8px;
+}
+
+.compose_area>input {
   flex: 1;
   border: 2px solid #2e77a4;
   border-radius: 4px;
   padding: 8px;
 }
-
-
 
 button {
   all: unset;
@@ -21,6 +29,7 @@ button {
   color: #FFF;
   padding: 8px 16px;
   border-radius: 4px;
+  font-weight: 700;
 
   cursor: pointer;
 }

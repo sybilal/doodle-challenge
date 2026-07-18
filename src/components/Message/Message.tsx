@@ -1,14 +1,21 @@
 import styles from "./Message.module.css"
+import { decodeHtml } from "../../utils/decode-html";
+import { format } from "date-fns";
 
 interface IMessage {
-  isYou: boolean;
+  author: string;
+  message: string;
+  createdAt: string;
+  isYou?: boolean;
 }
 
-const Message = ({ isYou = false }: IMessage) => {
+const Message = ({ author, message, createdAt, isYou = false }: IMessage) => {
   return (
     <div className={`${styles.container} ${isYou ? styles.is_you : ''}`}>
       <div className={styles.message_box}>
-        {isYou ? "Me" : "others"}
+        {!isYou && <span className={styles.grey_text}>{author}</span>}
+        {decodeHtml(message)}
+        <span className={styles.grey_text}>{format(createdAt,"dd MMM yyyy HH:mm")}</span>
       </div>
     </div>
   )

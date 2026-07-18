@@ -12,9 +12,7 @@ const Chat = () => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.content}>
-        <Conversation />
-      </div>
+      <Conversation />
       <Footer />
     </div>
   )
