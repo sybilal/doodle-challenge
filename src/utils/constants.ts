@@ -7,3 +7,5 @@ export const CURRENT_USER = 'Syed Bilal';
  */
 export const MESSAGES_LIMIT = 10;
 export const QUERY_KEY = ['messages'];
+
+export const POLL_INTERVAL = 2000;

@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import type { IMessage } from "../models/IMessage";
 import { getMessagesAfter } from "../services/messages.service";
 import { mergeMessages } from "../utils/merge-messages";
-import { QUERY_KEY } from "../utils/constants";
+import { POLL_INTERVAL, QUERY_KEY } from "../utils/constants";
 
 export const usePollMessages = (enabled: boolean) => {
   const qc = useQueryClient();
@@ -29,10 +29,10 @@ export const usePollMessages = (enabled: boolean) => {
           }
         }
       }
-      if (!cancelled) timer = setTimeout(tick, 2000);
+      if (!cancelled) timer = setTimeout(tick, POLL_INTERVAL);
     };
 
-    timer = setTimeout(tick, 2000);
+    timer = setTimeout(tick, POLL_INTERVAL);
     return () => { cancelled = true; clearTimeout(timer); };
   }, [enabled, qc]);
 }
