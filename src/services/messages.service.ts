@@ -11,6 +11,5 @@ export const getMessagesAfter = (after: string, limit = 50) =>
 export const getMessagesBefore = (before: string, limit = 10) =>
   http.get('/messages', { params: { before, limit } }) as unknown as Promise<IMessage[]>;
 
-
 export const createMessage = (body: IMessageBody) =>
   http.post('/messages', body) as unknown as Promise<IMessage>;

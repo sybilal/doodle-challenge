@@ -1,0 +1,25 @@
+.container {
+  position: fixed;
+  bottom: 64px;
+  inset-inline-end: 16px;
+  background-color: #00de006b;
+  padding-inline: 12px;
+  padding-block: 12px;
+  border-radius: 20px;
+  font-weight: 600;
+  color: black;
+  z-index: 2;
+  animation: slideInFromRight 0.3s ease-out;
+}
+
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

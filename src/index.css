@@ -16,14 +16,13 @@
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: #e0e0e0;
     background: #bdbdbd;
     border-radius: 10px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: fff;
+    background: #bdbdbd;
 }
 
 body {
@@ -32,4 +31,36 @@ body {
     font-weight: 400;
     color: #444;
     background: #f4f4f4;
+}
+
+/* Visually hidden, but still available to screen readers. */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Visible keyboard focus indicator for interactive elements. */
+:focus-visible {
+    outline: 2px solid #1a5f8a;
+    outline-offset: 2px;
+}
+
+/* Prefer reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
+    }
 }

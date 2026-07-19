@@ -5,15 +5,11 @@
   position: relative;
 }
 
-/* Tall spacer that gives the scrollbar its full range. Height is set inline
-   from virtualizer.getTotalSize(). */
 .inner {
   position: relative;
   width: 100%;
 }
 
-/* Each virtualized row is absolutely positioned; transform is set inline per
-   virtual item. Row spacing comes from the Message component's own padding. */
 .row {
   position: absolute;
   top: 0;
@@ -21,39 +17,6 @@
   width: 100%;
   display: flex;
   justify-content: center;
-}
-
-.spinner {
-  position: absolute;
-  top: 8px;
-  left: 0;
-  width: 100%;
-  text-align: center;
-  z-index: 1;
-}
-
-.olderError {
-  position: absolute;
-  top: 8px;
-  left: 0;
-  width: 100%;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  font-size: 13px;
-  color: #b00020;
-}
-
-.olderError button {
-  border: 1px solid currentColor;
-  background: transparent;
-  color: inherit;
-  border-radius: 4px;
-  padding: 2px 10px;
-  font: inherit;
-  cursor: pointer;
 }
 
 .message_end_ref {

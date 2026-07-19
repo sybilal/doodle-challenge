@@ -19,13 +19,16 @@ const Footer = () => {
   };
 
   return (
-    <form className={styles.container} onSubmit={handleSubmit}>
+    <form className={styles.container} onSubmit={handleSubmit} aria-label="Send a message">
       <div className={styles.compose_area}>
+        <label htmlFor="message" className="sr-only">Message</label>
         <input
+          id="message"
           value={message}
           onChange={(event) => setMessage(event.target.value)}
           placeholder="Message"
           disabled={isPending}
+          autoComplete="off"
         />
         <button type="submit" disabled={isPending || !message.trim()}>
           {isPending ? 'Sending…' : 'Send'}

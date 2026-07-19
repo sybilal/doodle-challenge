@@ -11,10 +11,11 @@ const Chat = () => {
   }, [])
 
   return (
-    <div className={styles.container}>
+    <main className={styles.container} aria-label="Chat">
+      <h1 className="sr-only">Chat</h1>
       <Conversation />
       <Footer />
-    </div>
+    </main>
   )
 }
 

@@ -14,16 +14,18 @@ export const usePollMessages = (enabled: boolean) => {
 
     const tick = async () => {
       if (!document.hidden) {
+        const dt = new Date();
         const current = qc.getQueryData<IMessage[]>(QUERY_KEY) ?? [];
-        const cursor = current[current.length - 1]?.createdAt;
+        const cursor = current[current.length - 1]?.createdAt ?? dt.toISOString();
         if (cursor) {
           try {
             const fresh = await getMessagesAfter(cursor, 50);
             if (fresh.length) {
               qc.setQueryData<IMessage[]>(QUERY_KEY, (old = []) => mergeMessages(old, fresh));
             }
-          } catch {
-            // next tick retries, add backoff later
+          } catch (e) {
+            console.error("Polling failed:", e)
+
           }
         }
       }

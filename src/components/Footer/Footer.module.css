@@ -21,6 +21,15 @@
   border: 2px solid #2e77a4;
   border-radius: 4px;
   padding: 8px;
+
+
+  outline: none;
+
+}
+
+.compose_area>input:focus {
+  box-shadow: 0px 0px 6px 0px #fff;
+  ;
 }
 
 button {
@@ -32,4 +41,19 @@ button {
   font-weight: 700;
 
   cursor: pointer;
+}
+
+button:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+button:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
 }
