@@ -31,7 +31,7 @@ concerns.
 
 ## Architecture
 
-<img width="842" height="511" alt="Doodle drawio" src="https://github.com/user-attachments/assets/cec56bb8-07d4-46fa-b6e0-be9581b18f2a" />
+<img width="2529" height="1536" alt="Doodle drawio" src="https://github.com/user-attachments/assets/68aab824-61c7-4d9e-9c65-9e4b77be270c" />
 
 **Data flow at a glance:**
 
