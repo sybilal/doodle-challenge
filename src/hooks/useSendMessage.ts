@@ -9,7 +9,8 @@ export const useSendMessage = () => {
   return useMutation({
     mutationFn: createMessage,
     onSuccess: (created) => {
-      queryClient.setQueryData<IMessage[]>(QUERY_KEY, (old = []) => mergeMessages(old, [created]));
+      const fromPOST = { ...created, isAppendedLocally: true }
+      queryClient.setQueryData<IMessage[]>(QUERY_KEY, (old = []) => mergeMessages(old, [fromPOST]));
     },
   });
 }
