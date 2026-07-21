@@ -44,7 +44,11 @@ describe('useSendMessage', () => {
     result.current.mutate({ message: 'hello', author: 'Alice' });
 
     await waitFor(() => expect(result.current.isSuccess).toBe(true));
-    expect(client.getQueryData<IMessage[]>(QUERY_KEY)).toEqual([existing[0], created]);
+    // The hook tags messages it appends locally so polling won't advance the cursor past them.
+    expect(client.getQueryData<IMessage[]>(QUERY_KEY)).toEqual([
+      existing[0],
+      { ...created, isAppendedLocally: true },
+    ]);
   });
 
   it('seeds the cache when it is empty', async () => {
@@ -53,7 +57,7 @@ describe('useSendMessage', () => {
     result.current.mutate({ message: 'hello', author: 'Alice' });
 
     await waitFor(() => expect(result.current.isSuccess).toBe(true));
-    expect(client.getQueryData<IMessage[]>(QUERY_KEY)).toEqual([created]);
+    expect(client.getQueryData<IMessage[]>(QUERY_KEY)).toEqual([{ ...created, isAppendedLocally: true }]);
   });
 
   it('reports an error and leaves the cache untouched when sending fails', async () => {
