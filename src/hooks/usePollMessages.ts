@@ -16,7 +16,10 @@ export const usePollMessages = (enabled: boolean) => {
       if (!document.hidden) {
         const dt = new Date();
         const current = qc.getQueryData<IMessage[]>(QUERY_KEY) ?? [];
-        const cursor = current[current.length - 1]?.createdAt ?? dt.toISOString();
+
+        const noOptimistic = current.filter(e => !e.isAppendedLocally);
+
+        const cursor = noOptimistic[noOptimistic.length - 1]?.createdAt ?? dt.toISOString();
         if (cursor) {
           try {
             const fresh = await getMessagesAfter(cursor, 50);

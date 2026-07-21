@@ -1,14 +1,9 @@
-import { useEffect } from 'react';
-import styles from './Chat.module.css'
 import Conversation from '../../components/Conversation';
 import Footer from '../../components/Footer';
+import styles from './Chat.module.css';
 
 
 const Chat = () => {
-
-  useEffect(() => {
-    console.log(`Chat mounted`)
-  }, [])
 
   return (
     <main className={styles.container} aria-label="Chat">

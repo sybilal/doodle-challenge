@@ -3,6 +3,7 @@ export interface IMessage {
     message: string;
     author: string;
     createdAt: string;
+    isAppendedLocally?: boolean;
 }
 
 export interface IMessageBody {
